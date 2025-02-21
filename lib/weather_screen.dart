@@ -21,35 +21,64 @@ class WeatherScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: [
-          //main
-          Card(
-            child: Column(
-              children: [
-                Text('32° C',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ))
-              ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            //main
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        '32° C',
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Icon(
+                        Icons.cloud,
+                        size: 64,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        'Rain',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          //sub
-          const Placeholder(
-            fallbackHeight: 150,
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          //additional
-          const Placeholder(
-            fallbackHeight: 150,
-          ),
-        ],
+            SizedBox(
+              height: 25,
+            ),
+            //sub
+            Placeholder(
+              fallbackHeight: 150,
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            //additional
+            Placeholder(
+              fallbackHeight: 150,
+            ),
+          ],
+        ),
       ),
     );
   }
